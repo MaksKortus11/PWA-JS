@@ -1,0 +1,21 @@
+const params = new URLSearchParams(window.location.search);
+const cityId = params.get('id');
+
+fetch('data/hoenn.json')
+  .then(res => res.json())
+  .then(data => {
+    const city = data.cities.find(c => c.id === cityId);
+    const container = document.getElementById('city');
+
+    if (!city) {
+      container.innerHTML = '<p>Miasto nie znalezione.</p>';
+      return;
+    }
+
+    container.innerHTML = `
+      <h1>${city.name}</h1>
+      <img src="${city.image}" alt="${city.name}" class="map">
+      <p>${city.description}</p>
+      <a href="index.html">← Powrót do mapy</a>
+    `;
+  });
