@@ -1,0 +1,22 @@
+{
+  "cities": [
+    {
+      "id": "littleroot",
+      "name": "Littleroot Town",
+      "description": "Spokojne miasteczko, w którym zaczyna się przygoda trenera Pokémon w regionie Hoenn.",
+      "image": "images/cities/littleroot.jpg"
+    },
+    {
+      "id": "oldale",
+      "name": "Oldale Town",
+      "description": "Małe miasteczko łączące drogi prowadzące do wielu regionów Hoenn.",
+      "image": "images/cities/oldale.jpg"
+    },
+    {
+      "id": "slateport",
+      "name": "Slateport City",
+      "description": "Portowe miasto znane z targów i Muzeum Oceanicznego.",
+      "image": "images/cities/slateport.jpg"
+    }
+  ]
+}
