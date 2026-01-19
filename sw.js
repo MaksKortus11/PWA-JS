@@ -6,11 +6,11 @@ const filesToCache = [
   '/js/main.js',
   '/cities/littleroot.html',
   '/cities/slateport.html',
-  '/cities/mauville.html',
+  '/cities/oldalee.html',
   '/images/map-hoenn.jpg',
   '/images/cities/littleroot.jpg',
   '/images/cities/slateport.jpg',
-  '/images/cities/mauville.jpg'
+  '/images/cities/oldale.jpg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -53,3 +53,4 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
