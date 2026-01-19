@@ -6,45 +6,25 @@
   <title>Hoenn Map PWA</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
-  <meta name="theme-color" content="#db4938">
 </head>
 <body>
   <header>
     <h1>Mapa regionu Hoenn</h1>
+    <nav>
+      <label for="citySelect">Wybierz miasto:</label>
+      <select id="citySelect">
+        <option value="">-- Wybierz miasto --</option>
+        <option value="cities/littleroot.html">Littleroot Town</option>
+        <option value="cities/slateport.html">Slateport City</option>
+        <option value="cities/mauville.html">Mauville City</option>
+      </select>
+    </nav>
   </header>
-  <main>
-    <img src="images/map-hoenn.jpg" alt="Hoenn Map" usemap="#hoennmap">
-    <map name="hoennmap">
-      <area shape="circle" coords="50,150,20" href="cities/littleroot.html" alt="Littleroot Town">
-      <area shape="circle" coords="200,180,20" href="cities/slateport.html" alt="Slateport City">
-      <area shape="circle" coords="350,220,20" href="cities/mauville.html" alt="Mauville City">
-    </map>
 
-    <h2>Lista miast:</h2>
-    <ul>
-      <li><a href="cities/littleroot.html">Littleroot Town</a></li>
-      <li><a href="cities/slateport.html">Slateport City</a></li>
-      <li><a href="cities/mauville.html">Mauville City</a></li>
-    </ul>
+  <main>
+    <img src="images/map-hoenn.jpg" alt="Hoenn Map">
   </main>
 
   <script src="js/main.js"></script>
 </body>
-  <header>
-  <h1>Mapa regionu Hoenn</h1>
-  <nav>
-    <label for="citySelect">Wybierz miasto:</label>
-    <select id="citySelect">
-      <option value="">-- Wybierz miasto --</option>
-      <option value="cities/littleroot.html">Littleroot Town</option>
-      <option value="cities/slateport.html">Slateport City</option>
-      <option value="cities/mauville.html">Mauville City</option>
-    </select>
-  </nav>
-</header>
-
 </html>
-
-
-
