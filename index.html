@@ -1,16 +1,36 @@
-<main>
-  <h1 class="title">Mapa regionu Hoenn</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hoenn Map PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico">
+  <meta name="theme-color" content="#db4938">
+</head>
+<body>
+  <header>
+    <h1>Mapa regionu Hoenn</h1>
+  </header>
+  <main>
+    <img src="images/map-hoenn.jpg" alt="Hoenn Map" usemap="#hoennmap">
+    <map name="hoennmap">
+      <area shape="circle" coords="50,150,20" href="cities/littleroot.html" alt="Littleroot Town">
+      <area shape="circle" coords="200,180,20" href="cities/slateport.html" alt="Slateport City">
+      <area shape="circle" coords="350,220,20" href="cities/mauville.html" alt="Mauville City">
+    </map>
 
-  <img src="images/map-hoenn.jpg" alt="Mapa Hoenn" class="map">
+    <h2>Lista miast:</h2>
+    <ul>
+      <li><a href="cities/littleroot.html">Littleroot Town</a></li>
+      <li><a href="cities/slateport.html">Slateport City</a></li>
+      <li><a href="cities/mauville.html">Mauville City</a></li>
+    </ul>
+  </main>
 
-  <section id="city-list">
-    <noscript>
-      <p>Lista miast Hoenn:</p>
-      <ul>
-        <li><a href="city.html?id=littleroot">Littleroot Town</a></li>
-        <li><a href="city.html?id=oldale">Oldale Town</a></li>
-        <li><a href="city.html?id=slateport">Slateport City</a></li>
-      </ul>
-    </noscript>
-  </section>
-</main>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+
