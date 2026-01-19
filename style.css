@@ -34,5 +34,10 @@ img {
   height: auto;
   display: block;
 }
+body {
+  overflow-x: hidden;
+}
+
+
 
 
