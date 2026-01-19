@@ -6,7 +6,7 @@ const filesToCache = [
   '/js/main.js',
   '/cities/littleroot.html',
   '/cities/slateport.html',
-  '/cities/oldalee.html',
+  '/cities/oldale.html',
   '/images/map-hoenn.jpg',
   '/images/cities/littleroot.jpg',
   '/images/cities/slateport.jpg',
@@ -53,4 +53,5 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
 
