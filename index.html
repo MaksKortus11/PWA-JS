@@ -6,10 +6,8 @@
 
   <title>Mapa regionu Hoenn</title>
 
-  <!-- PWA manifest -->
   <link rel="manifest" href="./manifest.json" />
 
-  <!-- Preload LCP image -->
   <link
     rel="preload"
     as="image"
@@ -17,7 +15,6 @@
     fetchpriority="high"
   />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="./style.css" />
 
   <style>
@@ -46,7 +43,6 @@
 
   <h1>Mapa regionu Hoenn</h1>
 
-  <!-- LCP IMAGE (OPTIMIZED) -->
   <img
     src="./images/map-hoenn-1024.webp"
     srcset="
@@ -61,8 +57,7 @@
     fetchpriority="high"
   />
 
-  <p>Wybierz miasto:</p>
-
+  <label for="citySelect">Wybierz miasto:</label>
   <select id="citySelect">
     <option value="">-- Wybierz miasto --</option>
     <option value="cities/dewford.html">Dewford Town</option>
@@ -95,3 +90,4 @@
 
 </body>
 </html>
+
