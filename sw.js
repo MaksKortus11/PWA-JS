@@ -22,7 +22,7 @@ const filesToCache = [
   '/cities/verdanturf.html',
   '/images/map-hoenn.jpg',
   '/images/cities/dewford.jpg',
-  '/images/cities/evergrander.jpg',
+  '/images/cities/evergrande.jpg',
   '/images/cities/fallabor.jpg',
   '/images/cities/fortree.jpg',
   '/images/cities/lavaridge.jpg',
@@ -79,6 +79,7 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
 
 
 
