@@ -30,12 +30,12 @@ const filesToCache = [
   '/images/cities/littleroot.jpg',
   '/images/cities/mauvile.jpg',
   '/images/cities/mossdeep.jpg',
-  '/images/cities/oldale.jpg'
-  '/images/cities/pacifidlog.jpg'
-  '/images/cities/petalburg.jpg'
-  '/images/cities/rustboro.jpg'
-  '/images/cities/slateport.jpg'
-  '/images/cities/sootopolis.jpg'
+  '/images/cities/oldale.jpg',
+  '/images/cities/pacifidlog.jpg',
+  '/images/cities/petalburg.jpg',
+  '/images/cities/rustboro.jpg',
+  '/images/cities/slateport.jpg',
+  '/images/cities/sootopolis.jpg',
   '/images/cities/verdanturf.jpg'
 ];
 
@@ -79,6 +79,7 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
 
 
 
