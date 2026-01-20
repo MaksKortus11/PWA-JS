@@ -1,50 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoenn Map PWA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>Mapa regionu Hoenn</title>
+
   <link rel="manifest" href="manifest.json">
+
+  <link rel="preload" as="image" href="images/map-hoenn.webp" fetchpriority="high">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Mapa regionu Hoenn</h1>
-    <nav>
-      <label for="citySelect">Wybierz miasto:</label>
-      <select id="citySelect">
-        <option value="">-- Wybierz miasto --</option>
-        <option value="cities/dewford.html">Dewford Town</option>
-        <option value="cities/evergrande.html">Ever Grande City</option>
-        <option value="cities/fallabor.html">Fallabor Town</option>
-        <option value="cities/fortree.html">Fortree City</option>
-        <option value="cities/lavaridge.html">Lavaridge Town</option>
-        <option value="cities/lillycove.html">Lillycove city</option>
-        <option value="cities/littleroot.html">Littleroot Town</option>
-        <option value="cities/mauvile.html">Mauvile City</option>
-        <option value="cities/mossdeep.html">Mossdeep City</option>        
-        <option value="cities/oldale.html">Oldale Town</option>
-        <option value="cities/pacifidlog.html">Pacifidlog Town</option>
-        <option value="cities/petalburg.html">Petalburg City</option>
-        <option value="cities/rustboro.html">Rustboro City</option>
-        <option value="cities/slateport.html">Slateport City</option>
-        <option value="cities/sootopolis.html">Sootopolis City</option>
-        <option value="cities/verdanturf.html">Verdanturf Town</option>
-      </select>
-    </nav>
-  </header>
 
-  <main>
-    <img src="images/map-hoenn.jpg" alt="Hoenn Map">
-  </main>
+  <h1>Mapa regionu Hoenn</h1>
 
-  <script src="js/main.js"></script>
+  <img
+    src="images/map-hoenn.webp"
+    srcset="images/map-hoenn-640.webp 640w, images/map-hoenn.webp 1286w"
+    sizes="(max-width: 800px) 100vw, 1286px"
+    alt="Mapa regionu Hoenn"
+    width="1286"
+    height="877"
+    fetchpriority="high"
+  >
+
+  <p>Wybierz miasto:</p>
+  <select id="citySelect">
+    <option value="">-- Wybierz miasto --</option>
+    <option value="cities/dewford.html">Dewford Town</option>
+    <option value="cities/evergrande.html">Ever Grande City</option>
+    <option value="cities/fallabor.html">Fallarbor Town</option>
+    <option value="cities/fortree.html">Fortree City</option>
+    <option value="cities/lavaridge.html">Lavaridge Town</option>
+    <option value="cities/lillycove.html">Lillycove city</option>
+    <option value="cities/littleroot.html">Littleroot Town</option>
+    <option value="cities/mauvile.html">Mauvile City</option>
+    <option value="cities/mossdeep.html">Mossdeep City</option>
+    <option value="cities/oldale.html">Oldale Town</option>
+    <option value="cities/pacifidlog.html">Pacifidlog Town</option>
+    <option value="cities/petalburg.html">Petalburg City</option>
+    <option value="cities/rustboro.html">Rustboro City</option>
+    <option value="cities/slateport.html">Slateport City</option>
+    <option value="cities/sootopolis.html">Sootopolis City</option>
+    <option value="cities/verdanturf.html">Verdanturf Town</option>
+  </select>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
-
-
-
-
-
-
-
