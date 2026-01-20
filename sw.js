@@ -4,13 +4,39 @@ const filesToCache = [
   '/index.html',
   '/style.css',
   '/js/main.js',
+  '/cities/dewford.html',
+  '/cities/evergrande.html',
+  '/cities/fallabor.html',
+  '/cities/fortree.html',
+  '/cities/lavaridge.html',
+  '/cities/lillycove.html',
   '/cities/littleroot.html',
-  '/cities/slateport.html',
+  '/cities/mauvile.html',
+  '/cities/mossdeep.html',
   '/cities/oldale.html',
+  '/cities/pacifidlog.html',
+  '/cities/petalburg.html',
+  '/cities/rustboro.html',
+  '/cities/slateport.html',
+  '/cities/sootopolis.html',
+  '/cities/verdanturf.html',
   '/images/map-hoenn.jpg',
+  '/images/cities/dewford.jpg',
+  '/images/cities/evergrander.jpg',
+  '/images/cities/fallabor.jpg',
+  '/images/cities/fortree.jpg',
+  '/images/cities/lavaridge.jpg',
+  '/images/cities/lillycove.jpg',
   '/images/cities/littleroot.jpg',
-  '/images/cities/slateport.jpg',
+  '/images/cities/mauvile.jpg',
+  '/images/cities/mossdeep.jpg',
   '/images/cities/oldale.jpg'
+  '/images/cities/pacifidlog.jpg'
+  '/images/cities/petalburg.jpg'
+  '/images/cities/rustboro.jpg'
+  '/images/cities/slateport.jpg'
+  '/images/cities/sootopolis.jpg'
+  '/images/cities/verdanturf.jpg'
 ];
 
 self.addEventListener('install', (event) => {
@@ -53,5 +79,6 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
 
 
