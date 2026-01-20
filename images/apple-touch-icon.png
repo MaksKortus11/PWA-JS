@@ -1,0 +1,6 @@
+img = Image.new("RGB", (180, 180), "#db4938")
+draw = ImageDraw.Draw(img)
+font = ImageFont.truetype("arial.ttf", 100)
+w, h = draw.textsize("H", font=font)
+draw.text(((180-w)/2, (180-h)/2), "H", fill="white", font=font)
+img.save("images/apple-touch-icon.png")
