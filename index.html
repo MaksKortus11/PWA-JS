@@ -1,32 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Mapa regionu Hoenn</title>
 
-  <link rel="manifest" href="manifest.json">
+  <!-- PWA manifest -->
+  <link rel="manifest" href="./manifest.json" />
 
-  <link rel="preload" as="image" href="images/map-hoenn.webp" fetchpriority="high">
+  <!-- Preload LCP image -->
+  <link
+    rel="preload"
+    as="image"
+    href="./images/map-hoenn-1024.webp"
+    fetchpriority="high"
+  />
 
-  <link rel="stylesheet" href="style.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    select {
+      margin-top: 16px;
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
 
   <h1>Mapa regionu Hoenn</h1>
 
+  <!-- LCP IMAGE (OPTIMIZED) -->
   <img
-    src="images/map-hoenn.webp"
-    srcset="images/map-hoenn-640.webp 640w, images/map-hoenn.webp 1286w"
-    sizes="(max-width: 800px) 100vw, 1286px"
+    src="./images/map-hoenn-1024.webp"
+    srcset="
+      ./images/map-hoenn-640.webp 640w,
+      ./images/map-hoenn-1024.webp 1024w,
+      ./images/map-hoenn-1350.webp 1350w
+    "
+    sizes="(max-width: 768px) 100vw, 1350px"
+    width="1350"
+    height="921"
     alt="Mapa regionu Hoenn"
-    width="1286"
-    height="877"
     fetchpriority="high"
-  >
+  />
 
   <p>Wybierz miasto:</p>
+
   <select id="citySelect">
     <option value="">-- Wybierz miasto --</option>
     <option value="cities/dewford.html">Dewford Town</option>
@@ -34,9 +70,9 @@
     <option value="cities/fallabor.html">Fallarbor Town</option>
     <option value="cities/fortree.html">Fortree City</option>
     <option value="cities/lavaridge.html">Lavaridge Town</option>
-    <option value="cities/lillycove.html">Lillycove city</option>
+    <option value="cities/lillycove.html">Lilycove City</option>
     <option value="cities/littleroot.html">Littleroot Town</option>
-    <option value="cities/mauvile.html">Mauvile City</option>
+    <option value="cities/mauvile.html">Mauville City</option>
     <option value="cities/mossdeep.html">Mossdeep City</option>
     <option value="cities/oldale.html">Oldale Town</option>
     <option value="cities/pacifidlog.html">Pacifidlog Town</option>
@@ -47,6 +83,15 @@
     <option value="cities/verdanturf.html">Verdanturf Town</option>
   </select>
 
-  <script src="js/main.js" defer></script>
+  <!-- Main JS -->
+  <script src="./js/main.js" defer></script>
+
+  <!-- Service Worker registration fallback -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+
 </body>
 </html>
