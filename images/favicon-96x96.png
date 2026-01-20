@@ -1,0 +1,8 @@
+from PIL import Image, ImageDraw, ImageFont
+
+img = Image.new("RGB", (96, 96), "#db4938")
+draw = ImageDraw.Draw(img)
+font = ImageFont.truetype("arial.ttf", 60)
+w, h = draw.textsize("H", font=font)
+draw.text(((96-w)/2, (96-h)/2), "H", fill="white", font=font)
+img.save("images/favicon-96x96.png")
