@@ -1,28 +1,29 @@
 {
-  "name": "Hoenn Map PWA",
+  "name": "Mapa regionu Hoenn",
   "short_name": "HoennMap",
+  "description": "Interaktywna mapa regionu Hoenn z miastami i PWA funkcjonalnością",
   "start_url": "./index.html",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#db4938",
-  "lang": "en-US",
+  "lang": "pl-PL",
   "icons": [
     {
-      "src": "./images/pwa-icon-128.png",
-      "sizes": "128x128",
+      "src": "./images/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "./images/pwa-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "./images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "./images/pwa-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "./images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
-
-
