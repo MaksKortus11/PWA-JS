@@ -24,43 +24,62 @@ const filesToCache = [
   '/cities/sootopolis.html',
   '/cities/verdanturf.html',
 
-  // images
-  '/images/map-hoenn.webp'
+  // images (LCP + inne)
+  '/images/map-hoenn-640.webp',
+  '/images/map-hoenn-1024.webp',
+  '/images/map-hoenn-1350.webp'
 ];
 
-// cache install
+// Install event: cache all files
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName).then(cache => cache.addAll(filesToCache))
   );
 });
 
-// fetch handler
+// Fetch event: cache-first strategy for images, network-first for other requests
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request).then(fetchResponse => {
-        if (event.request.method === 'GET') {
-          caches.open(cacheName).then(cache => {
-            cache.put(event.request, fetchResponse.clone());
+  if (event.request.destination === 'image') {
+    // Cache-first for images
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        return cached || fetch(event.request).then(response => {
+          return caches.open(cacheName).then(cache => {
+            cache.put(event.request, response.clone());
+            return response;
           });
+        });
+      })
+    );
+    return;
+  }
+
+  // Network-first for other resources
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        // Optionally cache new requests
+        if (event.request.method === 'GET') {
+          caches.open(cacheName).then(cache => cache.put(event.request, response.clone()));
         }
-        return fetchResponse;
-      });
-    })
+        return response;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
 
-// cleanup old cache
+// Activate event: remove old caches
 self.addEventListener('activate', event => {
   const whitelist = [cacheName];
   event.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.map(key => {
-        if (!whitelist.includes(key)) {
-          return caches.delete(key);
-        }
-      }))
+      Promise.all(
+        keys.map(key => {
+          if (!whitelist.includes(key)) {
+            return caches.delete(key);
+          }
+        })
+      )
     )
   );
 });
