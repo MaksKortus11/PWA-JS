@@ -20,7 +20,7 @@ const filesToCache = [
   '/cities/slateport.html',
   '/cities/sootopolis.html',
   '/cities/verdanturf.html',
-  '/images/map-hoenn.jpg',
+  '/images/map-hoenn.webp',
   '/images/cities/dewford.jpg',
   '/images/cities/evergrande.jpg',
   '/images/cities/fallabor.jpg',
@@ -79,6 +79,7 @@ self.addEventListener('activate', (event) => {
     )
   );
 });
+
 
 
 
