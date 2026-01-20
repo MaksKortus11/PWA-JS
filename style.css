@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 html, body {
   font-family: sans-serif;
   text-align: center;
@@ -17,31 +18,70 @@ header {
   color: white;
 }
 
-nav {
-  margin-top: 0.5rem;
-}
-
-select {
-  padding: 0.3rem 0.5rem;
-  font-size: 1rem;
-}
-
 main {
   padding: 2rem;
 }
 
 h1 {
   margin: 0;
+  font-size: 3rem;
+  animation: fadeIn 2s ease-in-out;
 }
+
 img {
   max-width: 100%;
   width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
+  animation: slideIn 1.5s ease-out;
 }
 
+select {
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  margin-top: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+select:focus {
+  outline: 2px solid #db4938;
+  outline-offset: 2px;
+}
 
+select:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
+.pulse {
+  animation: pulseAnim 2s infinite;
+}
+
+@keyframes pulseAnim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
