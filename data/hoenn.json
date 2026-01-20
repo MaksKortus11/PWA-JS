@@ -11,9 +11,74 @@
       "image": "images/cities/oldale.jpg"
     },
     {
-      "id": "slateport",
+      "id": "dewford",
       "name": "Slateport City",
       "image": "images/cities/slateport.jpg"
+    }
+     {
+      "id": "slateport",
+      "name": "Dewford Town",
+      "image": "images/cities/dewford.jpg"
+    }
+     {
+      "id": "fallabor",
+      "name": "Fallabor Town",
+      "image": "images/cities/fallabor.jpg"
+    }
+     {
+      "id": "evergrande",
+      "name": "Ever Grande City",
+      "image": "images/cities/evergrande.jpg"
+    }
+     {
+      "id": "fortree",
+      "name": "Fortree City",
+      "image": "images/cities/fortree.jpg"
+    }
+     {
+      "id": "lavaridge",
+      "name": "Lavaridge Town",
+      "image": "images/cities/lavaridge.jpg"
+    }
+     {
+      "id": "lillycove",
+      "name": "Lillycove City",
+      "image": "images/cities/lillycove.jpg"
+    }
+     {
+      "id": "mauvile",
+      "name": "Mauvile City",
+      "image": "images/cities/mauvile.jpg"
+    }
+     {
+      "id": "mossdeep",
+      "name": "Mossdeep City",
+      "image": "images/cities/mossdeep.jpg"
+    }
+     {
+      "id": "pacifidlog",
+      "name": "Pacifidlog Town",
+      "image": "images/cities/pacifidlog.jpg"
+    }
+     {
+      "id": "petalburg",
+      "name": "Petalburg City",
+      "image": "images/cities/petalburg.jpg"
+    }
+     {
+      "id": "rustboro",
+      "name": "Rustboro City",
+      "image": "images/cities/rustboro.jpg"
+    }
+     {
+      "id": "sootopolis",
+      "name": "Sootopolis City",
+      "image": "images/cities/sootopolis.jpg"
+    }
+     {
+      "id": "verdanturf",
+      "name": "Verdanturf Town",
+      "image": "images/cities/verdanturf.jpg"
     }
   ]
 }
