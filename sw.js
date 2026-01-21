@@ -1,7 +1,6 @@
-const STATIC_CACHE = 'hoenn-static-v1';
-const DYNAMIC_CACHE = 'hoenn-dynamic-v1';
+const cacheName = 'hoenn-pwa-v1';
 
-const STATIC_FILES = [
+const filesToCache = [
   './',
   './index.html',
   './style.css',
@@ -24,24 +23,23 @@ const STATIC_FILES = [
   './cities/verdanturf.html',
   './images/map-hoenn-640.webp',
   './images/map-hoenn-1024.webp',
-  './images/map-hoenn-1350.webp',
-  './offline.html'
+  './images/map-hoenn-1350.webp'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(STATIC_CACHE).then(cache => cache.addAll(STATIC_FILES))
+    caches.open(cacheName).then(cache => cache.addAll(filesToCache))
   );
 });
 
 self.addEventListener('fetch', event => {
   if (event.request.destination === 'image') {
     event.respondWith(
-      caches.match(event.request).then(response => {
-        return response || fetch(event.request).then(fetchRes => {
-          return caches.open(DYNAMIC_CACHE).then(cache => {
-            cache.put(event.request, fetchRes.clone());
-            return fetchRes;
+      caches.match(event.request).then(cached => {
+        return cached || fetch(event.request).then(response => {
+          return caches.open(cacheName).then(cache => {
+            cache.put(event.request, response.clone());
+            return response;
           });
         });
       })
@@ -49,29 +47,30 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  if (event.request.method === 'GET') {
-    event.respondWith(
-      fetch(event.request).then(fetchRes => {
-        return caches.open(DYNAMIC_CACHE).then(cache => {
-          cache.put(event.request, fetchRes.clone());
-          return fetchRes;
-        });
-      }).catch(() => {
-        return caches.match(event.request).then(res => {
-          return res || caches.match('./offline.html');
-        });
+  event.respondWith(
+    fetch(event.request)
+      .then(response => {
+        if (event.request.method === 'GET') {
+          caches.open(cacheName).then(cache => cache.put(event.request, response.clone()));
+        }
+        return response;
       })
-    );
-  }
+      .catch(() => {
+        if (event.request.mode === 'navigate') {
+          return caches.match('./index.html');
+        }
+        return caches.match(event.request);
+      })
+  );
 });
 
 self.addEventListener('activate', event => {
-  const cacheWhitelist = [STATIC_CACHE, DYNAMIC_CACHE];
+  const whitelist = [cacheName];
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
-          if (!cacheWhitelist.includes(key)) {
+          if (!whitelist.includes(key)) {
             return caches.delete(key);
           }
         })
