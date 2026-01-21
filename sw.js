@@ -1,7 +1,7 @@
 const STATIC_CACHE = 'hoenn-static-v1';
 const DYNAMIC_CACHE = 'hoenn-dynamic-v1';
 
-const filesToCache = [
+const STATIC_FILES = [
   './',
   './index.html',
   './style.css',
@@ -30,18 +30,18 @@ const filesToCache = [
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(STATIC_CACHE).then(cache => cache.addAll(filesToCache))
+    caches.open(STATIC_CACHE).then(cache => cache.addAll(STATIC_FILES))
   );
 });
 
 self.addEventListener('fetch', event => {
   if (event.request.destination === 'image') {
     event.respondWith(
-      caches.match(event.request).then(cached => {
-        return cached || fetch(event.request).then(response => {
+      caches.match(event.request).then(response => {
+        return response || fetch(event.request).then(fetchRes => {
           return caches.open(DYNAMIC_CACHE).then(cache => {
-            cache.put(event.request, response.clone());
-            return response;
+            cache.put(event.request, fetchRes.clone());
+            return fetchRes;
           });
         });
       })
@@ -51,12 +51,16 @@ self.addEventListener('fetch', event => {
 
   if (event.request.method === 'GET') {
     event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          caches.open(DYNAMIC_CACHE).then(cache => cache.put(event.request, response.clone()));
-          return response;
-        })
-        .catch(() => caches.match(event.request).then(res => res || caches.match('./offline.html')))
+      fetch(event.request).then(fetchRes => {
+        return caches.open(DYNAMIC_CACHE).then(cache => {
+          cache.put(event.request, fetchRes.clone());
+          return fetchRes;
+        });
+      }).catch(() => {
+        return caches.match(event.request).then(res => {
+          return res || caches.match('./offline.html');
+        });
+      })
     );
   }
 });
