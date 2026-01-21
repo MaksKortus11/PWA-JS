@@ -2,8 +2,8 @@
   "name": "Mapa regionu Hoenn",
   "short_name": "Hoenn",
   "lang": "pl-PL",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/PWA-JS/index.html",
+  "scope": "/PWA-JS/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#34eb77",
@@ -15,20 +15,10 @@
       "type": "image/png"
     },
     {
-      "src": "images/pwa-icon-144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
       "src": "images/pwa-icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "images/pwa-icon-256.png",
-      "sizes": "256x256",
-      "type": "image/png"
     },
     {
       "src": "images/pwa-icon-512.png",
