@@ -1,4 +1,4 @@
-// Rejestracja Service Workera
+
 window.onload = () => {
   'use strict';
   if ('serviceWorker' in navigator) {
@@ -7,7 +7,6 @@ window.onload = () => {
     .catch((error) => console.error('Service Worker registration failed:', error));
   }
 
-  // Dropdown menu
   const citySelect = document.getElementById('citySelect');
   if (citySelect) {
     citySelect.addEventListener('change', (e) => {
