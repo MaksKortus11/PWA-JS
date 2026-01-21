@@ -2,7 +2,7 @@
   "name": "Mapa regionu Hoenn",
   "short_name": "Hoenn",
   "lang": "pl-PL",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#34eb77",
@@ -37,3 +37,4 @@
     }
   ]
 }
+
