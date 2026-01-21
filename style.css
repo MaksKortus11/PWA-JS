@@ -13,7 +13,7 @@ html, body {
 }
 
 header {
-  background-color: #34eb77;
+  background-color: #01730e;
   padding: 1rem;
   color: white;
 }
@@ -85,3 +85,4 @@ select:hover {
   50% { transform: scale(1.05); opacity: 0.8; }
   100% { transform: scale(1); opacity: 1; }
 }
+
