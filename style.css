@@ -3,51 +3,47 @@
 }
 
 html, body {
-  font-family: sans-serif;
+  font-family: 'Arial', sans-serif;
   text-align: center;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
+  background: #f0f8f5;
 }
 
 header {
   background-color: #01730e;
-  padding: 1rem;
+  padding: 1.5rem;
   color: white;
   animation: headerDrop 1s ease-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 main {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  margin: 0;
+  margin: 0 0 1rem 0;
   font-size: 3rem;
+  color: #ffffff;
   animation: fadeIn 2s ease-in-out;
 }
 
-img {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 2rem auto 0;
-  animation: slideIn 1.5s ease-out;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
 select {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
-  margin-top: 16px;
-  margin-bottom: 2rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  margin-bottom: 2rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 select:focus {
@@ -57,7 +53,18 @@ select:focus {
 
 select:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  animation: slideIn 1.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -98,18 +105,9 @@ select:hover {
 }
 
 @keyframes pulseAnim {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,4 +117,11 @@ select:hover {
   }
 }
 
-
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  select {
+    width: 90%;
+  }
+}
